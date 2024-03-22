@@ -3,8 +3,6 @@ export WOF_ACCOUNT_ID=$(aws sts get-caller-identity --query 'Account' --output t
 export WOF_ECS_CLUSTER_NAME=ecs-fargate-wordpress
 export WOF_CFN_STACK_NAME=WordPress-on-Fargate
 
-wget https://raw.githubusercontent.com/aws-samples/containers-blog-maelstrom/main/CloudFormation/wordpress-ecs-fargate.yaml
-
 aws cloudformation create-stack \
   --stack-name $WOF_CFN_STACK_NAME \
   --region $WOF_AWS_REGION \
